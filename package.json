@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "jest --watchAll --verbose",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
