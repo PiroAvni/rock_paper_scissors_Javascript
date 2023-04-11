@@ -45,6 +45,7 @@ const getUserChoice = (userInput) => {
 //
 const getCpuChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
+  console.log(randomNumber )
   // assigns random number to the logic
   switch (randomNumber) {
     case 0:
@@ -58,26 +59,26 @@ const getCpuChoice = () => {
       break;
   }
 };
-function getWinner(userChoice, computerChoice) {
-  if (userChoice === computerChoice) {
+function getWinner(userChoice, cpuChoice) {
+  if (userChoice === cpuChoice) {
     return "Game is a tie";
   }
   if (userChoice === "rock") {
-    if (computerChoice === "paper") {
+    if (cpuChoice === "paper") {
       return "Computer WON!!!";
     } else {
       return "You Won!!";
     }
   }
   if (userChoice === "paper") {
-    if (computerChoice === "scissors") {
+    if (cpuChoice === "scissors") {
       return "Computer WON!!!";
     } else {
       return "You Won!!";
     }
   }
   if (userChoice === "scissors") {
-    if (computerChoice === "rock") {
+    if (cpuChoice === "rock") {
       return "Computer WON!!!";
     } else {
       return "You Won!!";
@@ -88,10 +89,12 @@ function getWinner(userChoice, computerChoice) {
 const playGame = () => {
   const userChoice = prompt("Please select rock, paper or scissors?");
   getUserChoice(userChoice);
-  const computerChoice = getCpuChoice();
-  console.log("\x1b[33m", `You threw: ${userChoice}`);
-  console.log("\x1b[34m", `The computer threw: ${computerChoice}`);
-  console.log("\x1b[41m", getWinner(userChoice, computerChoice));
+  const cpuChoice = getCpuChoice();
+  console.log("\x1b[33m", `You threw: ${userChoice}`, "\x1b[0m");
+  console.log("\x1b[0m")
+  console.log("\x1b[34m", `The computer threw: ${cpuChoice}`);
+  console.log("\x1b[41m", getWinner(userChoice, cpuChoice," \x1b[0m'"));
+  console.log("\x1b[0m")
 };
 
 playGame();
